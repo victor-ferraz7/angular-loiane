@@ -1,3 +1,4 @@
+import { CursosService } from './cursos.service';
 //Módulo de funcionalidade  
 // Não importa o Browser Module, mas Sim CommonModule
 
@@ -18,6 +19,9 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
   exports: [ // informa ao angular quais as declarações(Componentes, diretivas, pipes) desse módulo que queremos expor
 // para outros módulos
       CursosComponent
+  ],
+  providers: [ // Serviços Fornecedores
+    CursosService
   ]
 })
 export class CursosModule { }
