@@ -7,20 +7,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  url : string = 'http://github.com/victor-ferraz7';
+  public url: string = 'http://github.com/victor-ferraz7';
 
-  urlImagem = 'http://lorempixel.com/400/200/';
+  public urlImagem = 'http://lorempixel.com/400/200/';
 
-  getPropertyBinding(){
+  public valorAtual: string = '';
+
+  public valorSalvo: string = '';
+
+  public valorSalvo2: string = '';
+
+  public isMouseOver: boolean = false;
+
+  getPropertyBinding() {
     return 'Valor do Component no Template';
   }
 
-  getPraia(){
+  getPraia() {
     return "Pegar uma Praia";
   }
 
-  getImagem(){
+  getImagem() {
     return 'http://lorempixel.com/400/200/sports/';
+  }
+
+  botaoClicado() {
+    return alert('Você clicou no botão!');
+  }
+
+  onKeyUp(evento: KeyboardEvent) {
+    // console.log((<HTMLInputElement>event.target).value);
+    this.valorAtual = (<HTMLInputElement>event.target).value;
+  }
+  
+  salvarValor(valor){
+    this.valorSalvo = valor
+  }
+
+  salvarValor2(valor){
+    this.valorSalvo2 = valor;
+  }
+
+  onMouseOverOut(){
+   this.isMouseOver = !this.isMouseOver;
   }
 
   constructor() { }
