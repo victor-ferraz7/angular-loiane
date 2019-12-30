@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
   styleUrls: ['./data-binding.component.css']
 })
+
 export class DataBindingComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   public url: string = 'http://github.com/victor-ferraz7';
 
@@ -18,6 +24,10 @@ export class DataBindingComponent implements OnInit {
   public valorSalvo2: string = '';
 
   public isMouseOver: boolean = false;
+
+  public nome: string = "Victor";
+
+  public nome2: string = '';
 
   getPropertyBinding() {
     return 'Valor do Component no Template';
@@ -39,22 +49,17 @@ export class DataBindingComponent implements OnInit {
     // console.log((<HTMLInputElement>event.target).value);
     this.valorAtual = (<HTMLInputElement>event.target).value;
   }
-  
-  salvarValor(valor){
+
+  salvarValor(valor) {
     this.valorSalvo = valor
   }
 
-  salvarValor2(valor){
+  salvarValor2(valor) {
     this.valorSalvo2 = valor;
   }
 
-  onMouseOverOut(){
-   this.isMouseOver = !this.isMouseOver;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
+  onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver;
   }
 
 }

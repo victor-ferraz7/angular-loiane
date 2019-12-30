@@ -1,0 +1,28 @@
+<section class='two-way-binding'>
+  <article>
+    <h3>Aula #12 - Two-Way Data Binding </h3>
+    <div>
+      <input type="text" [value]="nome" (input)="nome = $event.target.value">
+      <p>
+        Você digitou o nome: {{ nome }}
+      </p>
+    </div>
+
+    <div>
+      <input type="text" [(ngModel)]="nome2">
+      <!-- O Angular tem uma propriedade chamada ngModel, 
+        que é uma representação de uma 
+        entidade(que pode ser um campo simples, como uma string ou até mesmo um objeto)
+      -> Para Eventos, o Angular tem o (ngModelChange) para quando esse campo for atualizado  -->
+       <p>
+        Você digitou o nome: {{ nome2 }}
+      </p>
+    </div>
+    <div>
+      Digite a Idade da Pessoa <input type="text" [(ngModel)]="pessoa.idade"><br><br>
+      Digite o Nome da Pessoa <input type="text" [(ngModel)]="pessoa.nome">
+      <br>
+      O Nome da Pessoa é {{pessoa.nome}} e tem {{pessoa.idade}}
+    </div> 
+  </article>
+</section>

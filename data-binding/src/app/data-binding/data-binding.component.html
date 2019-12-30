@@ -10,16 +10,17 @@
 
   _________________________________________________
   <article>
+
     <h3>Property Binding</h3>
     <p>É o {{ getPropertyBinding() }}</p>
     <img src="{{ urlImagem }}"> <br>
     <img [src]="getImagem()">
+
   </article>
 </section>
 
 -------------------------------------------------------
-<br>
-<br>
+
 <article>
   <h3>Class & Style Binding - Aula 10</h3>
   <div>
@@ -30,7 +31,6 @@
       <option value="alert-warning">Warning</option>
       <option value="alert-danger">Danger</option>
     </select>
-    <br>
     <br>
     <br>
 
@@ -56,41 +56,66 @@
     <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
       Esse texto só aparece em casso de erro.
     </div>
-    <br>
-    <br>
+
   </div>
 </article>
-<br>
-<br>
 -------------------------------------------------------------------------------------------------------------
 
 <article>
   <h3>Aula 11 - Event binding </h3>
   <div>
     <button class="btn btn-primary" (click)="botaoClicado()">Me clica</button>
-      <br>
-      <br>
+    <br>
+    <br>
     <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor($event.target.value)">
-      <p>
-        Valor Atual: {{valorAtual}}
-      </p>
-      <p>
-        Valor Salvo: {{valorSalvo }}
-      </p>
-        <br>
-        <br>
-      <input type="text" #campoInput (keyup.enter)="salvarValor2(campoInput.value)">
-      <!-- #campoInput é uma declaração de Variável Local, utilizando #campoInput é feita uma referência a event.target -->
-      <button class="btn btn-warning" (click)="salvarValor2(campoInput.value)">clica pra salvar</button>
-        <br>
-        <br>
-      <p>
-        Valor Salvo 2: {{ valorSalvo2 }}
-      </p>
-        <br>
-        <br>
-      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o mouse sobre mim </span>
-        <br>
-        <br>
+    <p>
+      Valor Atual: {{valorAtual}}
+    </p>
+    <p>
+      Valor Salvo: {{valorSalvo }}
+    </p>
+    <br>
+    <br>
+    <input type="text" #campoInput (keyup.enter)="salvarValor2(campoInput.value)">
+    <!-- #campoInput é uma declaração de Variável Local, utilizando #campoInput é feita uma referência a event.target -->
+    <button class="btn btn-warning" (click)="salvarValor2(campoInput.value)">clica pra salvar</button>
+    <br>
+    <br>
+    <p>
+      Valor Salvo 2: {{ valorSalvo2 }}
+    </p>
+    <br>
+    <br>
+    <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o mouse
+      sobre mim </span>
   </div>
 </article>
+
+-------------------------------------------------------------------------------------------------------------
+
+<!-- <section class='two-way-binding'>
+  <article>
+    <h3>Aula #12 - Two-Way Data Binding </h3>
+    <div>
+      <input type="text" [value]="nome" (input)="nome = $event.target.value">
+      <p>
+        Você digitou o nome: {{ nome }}
+      </p>
+    </div>
+
+    <div>
+      <input type="text" [(ngModel)]="nome2">
+       <p>
+        Você digitou o nome: {{ nome2 }}
+      </p>
+    </div>
+    <div>
+      Digite a Idade da Pessoa <input type="text" [(ngModel)]="pessoa.idade"><br><br>
+      Digite o Nome da Pessoa <input type="text" [(ngModel)]="pessoa.nome">
+      <br>
+      O Nome da Pessoa é {{pessoa.nome}} e tem {{pessoa.idade}}
+    </div> 
+  </article>
+</section> -->
+
+<app-meu-form></app-meu-form>
