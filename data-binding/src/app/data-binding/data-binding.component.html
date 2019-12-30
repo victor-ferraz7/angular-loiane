@@ -1,4 +1,4 @@
-<h1>Data-Binding</h1>
+<h2>Data-Binding - Aula 9</h2>
 
 <section class="property-binding">
   <article>
@@ -11,7 +11,51 @@
   _________________________________________________
   <article>
     <h3>Property Binding</h3>
+    <p>É o {{ getPropertyBinding() }}</p>
     <img src="{{ urlImagem }}"> <br>
     <img [src]="getImagem()">
   </article>
 </section>
+
+-------------------------------------------------------
+
+<article>
+  <h3>Class & Style Binding - Aula 10</h3>
+  <div>
+    Selecione uma Classe:
+    <select #classe (change)="0">
+      <option value="alert-success">Sucess</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Warning</option>
+      <option value="alert-danger">Danger</option>
+    </select>
+    <br>
+    <br>
+    <br>
+
+    <div class="alert {{ classe.value }}" role="alert">
+      Texto Colorido de acordo com a combo-box
+    </div>
+    <br>
+
+    <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+     Alert Success
+    </div>
+    <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+      Alert Danger
+    </div>
+    <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+      Alert Warning
+    </div>
+    <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+      Alert info
+    </div>
+
+    <br>
+    <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+      Esse texto só aparece em casso de erro.
+    </div>
+    <br>
+    <br>
+  </div>
+</article>

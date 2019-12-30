@@ -11,6 +11,10 @@ export class DataBindingComponent implements OnInit {
 
   urlImagem = 'http://lorempixel.com/400/200/';
 
+  getPropertyBinding(){
+    return 'Valor do Component no Template';
+  }
+
   getPraia(){
     return "Pegar uma Praia";
   }
