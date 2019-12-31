@@ -29,6 +29,8 @@ export class DataBindingComponent implements OnInit {
 
   public nome2: string = '';
 
+  public nomeCurso: string = 'Curso Angular'
+
   getPropertyBinding() {
     return 'Valor do Component no Template';
   }
