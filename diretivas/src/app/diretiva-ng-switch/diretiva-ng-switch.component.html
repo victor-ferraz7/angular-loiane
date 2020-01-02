@@ -13,3 +13,19 @@
     <p *ngSwitchCase="'mapa'"> MODO Mapa Ativado</p>
     <p *ngSwitchCase="'lista'"> MODO Lista Ativado</p>
   </div>
+
+  ----------------------------------------------
+  <h3>Removendo o *</h3>
+
+  <div class="container" [ngSwitch]="aba">
+    <ng-template [ngSwitchCase]="'home'"> 
+      <p>Home Ativado</p>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'mapa'"> 
+      <p>MODO Mapa Ativado</p>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'lista'">
+      <p>MODO Lista Ativado</p>
+    </ng-template>
+
+  </div>

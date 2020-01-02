@@ -1,5 +1,4 @@
 
-
 <!-- Diretivas são formas de passar instruções para o código html
 
     <ul>
@@ -36,3 +35,15 @@
     Não há cursos para serem Listados
 </div>
 <button (click)="onMostrarCursos()">Mostrar | Esconder Cursos </button>
+<br>    
+
+----------------------------------------------------------------------------
+<h3>Removendo o * e usando template</h3>
+
+<!-- <template [ngIf]="mostrarCursos">
+    <div>Lista de Cursos Aqui também!</div>
+</template> -->
+
+<div template="ngIf mostrarCursos">
+    E aqui também
+</div>
