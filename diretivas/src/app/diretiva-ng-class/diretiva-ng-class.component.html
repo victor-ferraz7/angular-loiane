@@ -1,0 +1,18 @@
+<h3>Com property binding</h3>
+<h1>
+    <i class="glyphicon" [class.glyphicon-star-empty]="!meuFavorito" 
+        [class.glyphicon-star]="meuFavorito"
+        (click)="onFavoritoClick()"></i>
+</h1>
+
+----------------------------------------
+<h3>Com ngClass</h3>
+
+<h1>
+    <i class="glyphicon"
+    [ngClass]="{
+        'glyphicon-star-empty': !meuFavorito2,
+        'glyphicon-star': meuFavorito2
+    }"
+    (click)="onFavoritoClick2()"></i>
+</h1>
