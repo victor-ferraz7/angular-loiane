@@ -1,1 +1,38 @@
-<p>diretiva-ng-if works!</p>
+
+
+<!-- Diretivas são formas de passar instruções para o código html
+
+    <ul>
+        <li *ngFor="let curso of cursos">
+            {{ curso }}
+        </li>
+    </ul>
+
+>> Itere todos os CURSOS, e a cada iteração,
+    atribua o valor do elemento atual à uma variável CURSO.
+    Replique também o elemento li com valor da variável CURSOS
+    a cada iteração -->
+
+<h3>*ngIf</h3>
+<div *ngIf="cursos.length > 0">
+    Lista de Cursos Aqui!
+</div>
+<div *ngIf="cursos.length == 0">
+    Não há cursos para serem Listados
+</div>
+
+<div *ngIf="mostrarCursos">
+    Lista de Cursos Aqui!
+</div>
+<div *ngIf="!mostrarCursos">
+    Não há cursos para serem Listados
+</div>
+
+<div [hidden]="!mostrarCursos"> 
+    <!-- A propriedade Hidden pode ser uma alternativa para *ngIf -->
+    Lista de Cursos Aqui!
+</div>
+<div [hidden]="mostrarCursos">
+    Não há cursos para serem Listados
+</div>
+<button (click)="onMostrarCursos()">Mostrar | Esconder Cursos </button>
